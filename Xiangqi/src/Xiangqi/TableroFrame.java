@@ -270,17 +270,18 @@ public class TableroFrame extends JFrame {
     // ── Pintado ───────────────────────────────────────────────────────────────
 
     private void pintarTablero(Graphics2D g2) {
-        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,   RenderingHints.VALUE_ANTIALIAS_ON);
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,      RenderingHints.VALUE_ANTIALIAS_ON);
         g2.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 
         pintarFondo(g2);
         pintarRio(g2);
         pintarPalacios(g2);
         pintarLineas(g2);
-        pintarResaltadoJaque(g2);
-        pintarMovsPosibles(g2);
-        pintarPiezas(g2);
-        pintarSeleccion(g2);
+        pintarMovsLibres(g2);       // puntos verdes (casillas vacías)
+        pintarResaltadoJaque(g2);   // halo rojo del General en jaque
+        pintarPiezas(g2);           // piezas encima de todo lo anterior
+        pintarCapturasEncima(g2);   // anillo naranja SOBRE las fichas enemigas
+        pintarSeleccion(g2);        // anillo verde de selección
     }
 
     private void pintarFondo(Graphics2D g2) {
@@ -372,30 +373,41 @@ public class TableroFrame extends JFrame {
         g2.drawOval(px - r, py - r, r * 2, r * 2);
     }
 
-    // Verde para movimientos libres, naranja para capturas
-    private void pintarMovsPosibles(Graphics2D g2) {
+    // Puntos verdes para casillas vacías alcanzables
+    private void pintarMovsLibres(Graphics2D g2) {
         for (int[] m : movsPosibles) {
+            if (esCasillaDeCapturaEnemiga(m[0], m[1])) continue;
             int px = cx(m[0]), py = cy(m[1]);
             int r  = CELDA / 2 - 8;
+            g2.setColor(new Color(50, 200, 50, 130));
+            g2.fillOval(px - r, py - r, r * 2, r * 2);
+            g2.setColor(new Color(30, 150, 30, 200));
+            g2.setStroke(new BasicStroke(2f));
+            g2.drawOval(px - r, py - r, r * 2, r * 2);
+        }
+    }
 
-            boolean esCaptura = esCasillaDeCapturaEnemiga(m[0], m[1]);
+    // Anillo naranja grueso pintado ENCIMA de la ficha enemiga comible
+    private void pintarCapturasEncima(Graphics2D g2) {
+        for (int[] m : movsPosibles) {
+            if (!esCasillaDeCapturaEnemiga(m[0], m[1])) continue;
+            int px = cx(m[0]), py = cy(m[1]);
+            int r  = CELDA / 2 + 4;   // más grande que la ficha (radio ficha = CELDA/2 - 5)
 
-            if (esCaptura) {
-                // Fondo naranja semitransparente
-                g2.setColor(new Color(255, 140, 0, 60));
-                g2.fillOval(px - r - 4, py - r - 4, (r + 4) * 2, (r + 4) * 2);
-                // Anillo naranja grueso
-                g2.setColor(COLOR_CAPTURA);
-                g2.setStroke(new BasicStroke(3f));
-                g2.drawOval(px - r - 2, py - r - 2, (r + 2) * 2, (r + 2) * 2);
-            } else {
-                // Punto verde para movimiento libre
-                g2.setColor(new Color(50, 200, 50, 130));
-                g2.fillOval(px - r, py - r, r * 2, r * 2);
-                g2.setColor(new Color(30, 150, 30, 200));
-                g2.setStroke(new BasicStroke(2f));
-                g2.drawOval(px - r, py - r, r * 2, r * 2);
-            }
+            // Relleno naranja semitransparente sobre la ficha
+            g2.setColor(new Color(255, 140, 0, 90));
+            g2.fillOval(px - r, py - r, r * 2, r * 2);
+
+            // Anillo naranja sólido exterior
+            g2.setColor(COLOR_CAPTURA);
+            g2.setStroke(new BasicStroke(4f));
+            g2.drawOval(px - r, py - r, r * 2, r * 2);
+
+            // Segundo anillo interior para más visibilidad
+            int r2 = r - 5;
+            g2.setColor(new Color(255, 180, 0, 160));
+            g2.setStroke(new BasicStroke(2f));
+            g2.drawOval(px - r2, py - r2, r2 * 2, r2 * 2);
         }
     }
 

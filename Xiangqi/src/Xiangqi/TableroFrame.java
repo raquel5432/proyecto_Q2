@@ -209,7 +209,7 @@ public class TableroFrame extends JFrame {
         if (seleccionada == null) {
             if (pieza != null && pieza.getColor().equals(partida.getColorActual())) {
                 seleccionada = new int[]{cx, cy};
-                movsPosibles = pieza.obtenerMovimientos(tablero);
+                movsPosibles = partida.obtenerMovimientosLegales(pieza);
             }
         } else {
             if (estaEnMovsPosibles(cx, cy)) {
@@ -224,7 +224,7 @@ public class TableroFrame extends JFrame {
                 }
             } else if (pieza != null && pieza.getColor().equals(partida.getColorActual())) {
                 seleccionada = new int[]{cx, cy};
-                movsPosibles = pieza.obtenerMovimientos(tablero);
+                movsPosibles = partida.obtenerMovimientosLegales(pieza);
             } else {
                 seleccionada = null;
                 movsPosibles.clear();
@@ -534,7 +534,6 @@ public class TableroFrame extends JFrame {
         String mensaje = retiro
             ? perdedor + " SE HA RETIRADO\n¡FELICIDADES " + ganador + "!\nHAS GANADO 3 PUNTOS"
             : ganador  + " HA VENCIDO A " + perdedor + "\n¡FELICIDADES " + ganador + "!\nHAS GANADO 3 PUNTOS";
-
         JOptionPane.showMessageDialog(this, mensaje, "Fin de la Partida",
                                       JOptionPane.INFORMATION_MESSAGE);
         dispose();

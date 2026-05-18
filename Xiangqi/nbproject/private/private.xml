@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/alira/Documents/NetBeansProjects/Xiangqi/src/Xiangqi/Main.java</file>
+            <file>file:/C:/Users/alira/Documents/NetBeansProjects/Xiangqi/src/Xiangqi/MenuFrame.java</file>
+            <file>file:/C:/Users/alira/Documents/NetBeansProjects/Xiangqi/src/Xiangqi/Partida.java</file>
+            <file>file:/C:/Users/alira/Documents/NetBeansProjects/Xiangqi/src/Xiangqi/Pieza.java</file>
+            <file>file:/C:/Users/alira/Documents/NetBeansProjects/Xiangqi/src/Xiangqi/ReportesFrame.java</file>
+            <file>file:/C:/Users/alira/Documents/NetBeansProjects/Xiangqi/src/Xiangqi/Soldado.java</file>
+            <file>file:/C:/Users/alira/Documents/NetBeansProjects/Xiangqi/src/Xiangqi/Tablero.java</file>
+            <file>file:/C:/Users/alira/Documents/NetBeansProjects/Xiangqi/src/Xiangqi/TableroFrame.java</file>
+            <file>file:/C:/Users/alira/Documents/NetBeansProjects/Xiangqi/src/Xiangqi/LoginFrame.java</file>
+            <file>file:/C:/Users/alira/Documents/NetBeansProjects/Xiangqi/src/Xiangqi/LogPartida.java</file>
+            <file>file:/C:/Users/alira/Documents/NetBeansProjects/Xiangqi/src/Xiangqi/Jugador.java</file>
+            <file>file:/C:/Users/alira/Documents/NetBeansProjects/Xiangqi/src/Xiangqi/JuegoService.java</file>
+            <file>file:/C:/Users/alira/Documents/NetBeansProjects/Xiangqi/src/Xiangqi/InterfazLogDAO.java</file>
+            <file>file:/C:/Users/alira/Documents/NetBeansProjects/Xiangqi/src/Xiangqi/InterfazJugadorDAO.java</file>
+            <file>file:/C:/Users/alira/Documents/NetBeansProjects/Xiangqi/src/Xiangqi/ImplementacionLogDAO.java</file>
+            <file>file:/C:/Users/alira/Documents/NetBeansProjects/Xiangqi/src/Xiangqi/ImplementacionJugadorDAO.java</file>
+            <file>file:/C:/Users/alira/Documents/NetBeansProjects/Xiangqi/src/Xiangqi/HistorialMovimiento.java</file>
+            <file>file:/C:/Users/alira/Documents/NetBeansProjects/Xiangqi/src/Xiangqi/General.java</file>
+            <file>file:/C:/Users/alira/Documents/NetBeansProjects/Xiangqi/src/Xiangqi/EstiloUI.java</file>
+            <file>file:/C:/Users/alira/Documents/NetBeansProjects/Xiangqi/src/Xiangqi/Elefante.java</file>
+            <file>file:/C:/Users/alira/Documents/NetBeansProjects/Xiangqi/src/Xiangqi/Consejero.java</file>
+            <file>file:/C:/Users/alira/Documents/NetBeansProjects/Xiangqi/src/Xiangqi/Carro.java</file>
+            <file>file:/C:/Users/alira/Documents/NetBeansProjects/Xiangqi/src/Xiangqi/Canon.java</file>
+            <file>file:/C:/Users/alira/Documents/NetBeansProjects/Xiangqi/src/Xiangqi/Caballo.java</file>
+        </group>
+    </open-files>
+</project-private>

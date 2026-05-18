@@ -181,4 +181,13 @@ public class Partida {
         }
         return caps;
     }
+
+    public boolean estaEnJaque(String color) {
+        Pieza general = tablero.buscarGeneral(color);
+        if (general == null) return false;
+        String colorEnemigo = color.equals("rojo") ? "negro" : "rojo";
+        ArrayList<Pieza> enemigas = tablero.getPiezasBando(colorEnemigo);
+        return tablero.posicionAtacada(general.getX(), general.getY(), colorEnemigo, enemigas, 0)
+               || tablero.generalesSeMiran();
+    }
 }

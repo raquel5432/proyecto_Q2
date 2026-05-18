@@ -1,3 +1,5 @@
 raquel;1234s;3;17/05/2026;true
 alisson;1234s;0;17/05/2026;true
 martinez;1234a;0;17/05/2026;true
+alis;1234a;3;17/05/2026;true
+roy;1234a;0;17/05/2026;true
